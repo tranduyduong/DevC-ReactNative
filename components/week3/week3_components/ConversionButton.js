@@ -1,15 +1,31 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const ConversionButton = props => {
-    const fromFlag = props.from === 'usd' ? '🇺🇲' : '🇻🇳';
-    const toFlag = props.to === 'usd' ? '🇺🇲' : '🇻🇳';
-    return (
-        <TouchableOpacity style={styles.button}>
-            <Text>{fromFlag} to {toFlag}</Text>
-        </TouchableOpacity>
-    )
-}
+const ConversionButton = ({
+  to,
+  from,
+  toCurrency,
+  fromCurrency,
+  setConversionCurrencies
+}) => {
+  const isSelectedConversionType = fromCurrency === from && toCurrency === to;
+  const backgroundColor = isSelectedConversionType ? 'lightblue' : null;
+  const conditionalButtonStyle = { backgroundColor };
+
+  const fromFlag = from === 'usd' ? '🇺🇸' : '🇻🇳';
+  const toFlag = to === 'usd' ? '🇺🇸' : '🇻🇳';
+
+  return (
+    <TouchableOpacity
+      style={[styles.button, conditionalButtonStyle]}
+      onPress={() => setConversionCurrencies(from, to)}
+    >
+      <Text style={styles.buttonText}>
+        {fromFlag} to {toFlag}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
     button: {

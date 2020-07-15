@@ -1,13 +1,22 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
+import FormatedCurrency from './FormatedCurrency'
 
 const CurrencyResult = props => {
     return (
         <View style={styles.container}>
-            <Text styles={styles.text}>Current Currency:</Text>
-            <Text styles={styles.currencyText}>0.00</Text>
-            <Text styles={styles.text}>Conversion Currency:</Text>
-            <Text sytles={styles.currencyText}>0.00</Text>
+            <Text style={styles.text}>Current Currency:</Text>
+            <FormatedCurrency
+            type={props.from}
+            value={props.current}
+            />
+            {/* <Text style={styles.currencyText}>{props.current}</Text> */}
+            <Text style={styles.text}>Conversion Currency:</Text>
+            <FormatedCurrency
+            type={props.to}
+            value={props.converted}
+            />
+            {/* <Text style={styles.currencyText}>{props.converted}</Text> */}
         </View>
     )
 }
@@ -18,14 +27,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     text: {
-        fontSize: 10,
+        fontSize: 15,
         fontStyle: 'italic'
     },
-    currencyText: {
-        color: 'green',
-        fontSize: 50,
-        fontWeight: '400'
-    }
   });
 
 export default CurrencyResult;
