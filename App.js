@@ -1,15 +1,17 @@
 import React from "react";
 import { Text, View, Image, Button, StyleSheet } from "react-native";
 import { Provider, connect } from "react-redux";
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Week2 from "./components/week2";
 import Week3 from "./components/week3";
+import Week3A from "./components/week3a";
 import reducer from "./reducer";
 
 // A very simple store
-let store = createStore(reducer);
+let store = createStore(reducer, applyMiddleware(thunk));
 
 class Counter extends React.Component {
   static navigationOptions = {
@@ -65,6 +67,7 @@ function HomeScreen({ navigation }) {
       <Text>Hello World. Welcome to VN</Text>
       <Button title="Week 2" onPress={() => navigation.navigate("Week2")} />
       <Button title="Week 3" onPress={() => navigation.navigate("Week3")} />
+      <Button title="Week 3A" onPress={() => navigation.navigate("Week3a")} />
       <CounterContainer />
     </View>
   );
@@ -98,6 +101,11 @@ function App() {
             options={{ headerShown: false }}
             name="Week2"
             component={Week2}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Week3a"
+            component={Week3A}
           />
           <Stack.Screen
             options={{ headerShown: false }}

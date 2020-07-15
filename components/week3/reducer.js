@@ -1,9 +1,9 @@
 const defaultState = {
   title: "Week3",
 };
-export default function Week3(state, action) {
+export default function Week3(state = defaultState, action) {
   if (typeof state === "undefined") {
-    return 0;
+    return state;
   }
 
   switch (action.type) {
