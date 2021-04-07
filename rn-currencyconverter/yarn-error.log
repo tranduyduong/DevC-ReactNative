@@ -1,0 +1,51 @@
+Arguments: 
+  /usr/local/Cellar/node@10/10.15.2_1/bin/node /usr/local/bin/yarnpkg install
+
+PATH: 
+  /usr/local/share/npm/bin:/usr/local/opt/node@10/bin:/anaconda3/bin:/anaconda3/condabin:/Users/primetimetran/bin:/usr/local/share/npm/bin:/Users/primetimetran/.rvm/gems/ruby-2.5.1/bin:/Users/primetimetran/.rvm/gems/ruby-2.5.1@global/bin:/Users/primetimetran/.rvm/rubies/ruby-2.5.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/primetimetran/.rvm/bin:/Users/primetimetran/.rvm/bin:/Users/primetimetran/Library/Android/sdk/emulator:/Users/primetimetran/Library/Android/sdk/tools:/Users/primetimetran/Library/Android/sdk/tools/bin:/Users/primetimetran/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.15.2
+
+Node version: 
+  10.15.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/expo: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:130201:19)
+      at ontimeout (timers.js:436:11)
+      at tryOnTimeout (timers.js:300:5)
+      at listOnTimeout (timers.js:263:5)
+      at Timer.processTimers (timers.js:223:10)
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "expo": "^33.0.0",
+      "react": "16.8.3",
+      "react-dom": "^16.8.6",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+      "react-native-web": "^0.11.4"
+    },
+    "devDependencies": {
+      "babel-preset-expo": "^5.1.1"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
